@@ -6,22 +6,21 @@ provider "aws" {
 }
 
 // This is my AWS EC2 Provsion Block 
-resource "aws_instance" "frontend" {
+resource "aws_instance" "web" {
   ami           = "ami-03f38e546e3dc59e1"
   instance_type = "t2.micro"
   tags = {
-    Name = "FrontEnd-VM"
-    Createdby = "Terraform"
-}
+    Name = "AV"
+  }
 }
 
 
 // This is my AWS EC2 Provsion Block 
-resource "aws_instance" "backend" {
+resource "aws_instance" "db" {
   ami           = "ami-03f38e546e3dc59e1"
   instance_type = "t2.micro"
   tags = {
-    Name = "Backend-VM"
+    Name = "DbApp"
   }
 }
 
